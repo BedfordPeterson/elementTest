@@ -18,17 +18,33 @@
   </template>
 
   <script>
-    Polymer({
+    // Polymer({
 
-      is: 'elementTest-element',
+    //   is: 'elementTest-element',
 
-      properties: {
-        prop1: {
-          type: String,
-          value: 'elementTest-element',
-        },
-      },
+    //   properties: {
+    //     prop1: {
+    //       type: String,
+    //       value: 'elementTest-element',
+    //     },
+    //   },
 
-    });
+    // });
+
+    class ElementTest extends Polymer.Element {
+      static get is() { return 'elementTest-element'}
+      static get config() {
+        return {
+          properties: {
+            prop1: {
+              type: String,
+              value: 'elementTest-element'
+            }
+          }
+        }
+      }
+    }
+
+    customElements.define(ElementTest.is, ElementTest);
   </script>
 </dom-module>
